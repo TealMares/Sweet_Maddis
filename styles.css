@@ -1,0 +1,202 @@
+/* Reset básico y fuentes */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f7f6; /* Un gris claro suave */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #d3ebee; /* Azul oscuro */
+}
+
+/* Estilos del encabezado principal */
+.main-header {
+    background-color: #34d3db; /* Azul vibrante */
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.463);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Contenedor de las recetas (Grid/Flexbox) */
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 2rem; /* Espacio entre las tarjetas */
+    padding: 2rem;
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 2rem auto; /* Centra el grid en la página */
+}
+
+/* Estilos para cada tarjeta de receta */
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    width: 100%; /* Por defecto, ocupa todo el ancho */
+    max-width: 450px; /* Ancho máximo para cada tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+    width: 100%;
+    height: 250px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-bottom: 1px solid #eee;
+}
+
+.recipe-title {
+    font-size: 2rem;
+    color: #e67e22; /* Naranja cálido */
+    margin: 1.5rem 1.5rem 0.5rem 1.5rem;
+    text-align: center;
+}
+
+.recipe-description {
+    padding: 0 1.5rem 1rem 1.5rem;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    color: #34495e; /* Azul grisáceo */
+    margin: 1.5rem 1.5rem 0.8rem 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-card ul,
+.recipe-card ol {
+    padding: 0 2rem 1.5rem 3rem; /* Ajusta el padding para las listas */
+    margin: 0;
+}
+
+.recipe-card li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.recipe-card ol li {
+    counter-increment: step-counter;
+    margin-bottom: 0.8rem;
+}
+
+.recipe-card ol li::before {
+    content: counter(step-counter) ". ";
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* Estilos del pie de página */
+.main-footer {
+    background-color: #2c3e50; /* Azul oscuro */
+    color: #ecf0f1; /* Gris claro */
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .main-header p {
+        font-size: 1rem;
+    }
+
+    .recipe-grid {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .recipe-card {
+        max-width: 90%; /* En pantallas más pequeñas, las tarjetas pueden ocupar más ancho */
+    }
+
+    .recipe-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .recipe-card ul,
+    .recipe-card ol {
+        padding: 0 1.5rem 1rem 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-header p {
+        font-size: 0.9rem;
+    }
+
+    .recipe-grid {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+
+    .recipe-title {
+        font-size: 1.5rem;
+        margin: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .recipe-description {
+        padding: 0 1rem 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+        margin: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .recipe-card ul,
+    .recipe-card ol {
+        padding: 0 1rem 0.8rem 2rem;
+    }
+
+    .recipe-card li {
+        font-size: 0.85rem;
+    }
+}
